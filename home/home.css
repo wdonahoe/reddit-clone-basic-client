@@ -1,0 +1,73 @@
+/*.post-ul{
+	list-style-type: none;
+}
+.post-ul li {
+	padding:10px;
+}*/
+
+button {
+  border-radius: 0 !important;
+}
+
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.post {
+  position: relative;
+}
+.post-title{
+  min-height: 60px;
+}
+.post-info {
+  position: absolute;
+  bottom:0;
+  height: 10px;
+  margin-left: 5px;
+}
+
+.vote {
+  display: inline-block;
+  overflow: hidden;
+  width: 40px;
+  height: 25px;
+  cursor: pointer;
+  background: url('http://i.stack.imgur.com/iqN2k.png');
+  background-position: 0 -25px;
+  position: absolute;
+  top:-16px;
+  padding-left: 16px;
+
+  transform: scale(0.5,0.9);
+
+} 
+
+.vote.on {
+  background-position: 0 2px;
+}
+
+.vote-down {
+	display: inline-block;
+  	overflow: hidden;
+  	width: 40px;
+  	height: 25px;
+  	cursor: pointer;
+  	background: url('http://i.stack.imgur.com/iqN2k.png');
+  	background-position: 0 -25px;
+    position: absolute;
+    top:16px;
+    padding-left: 17px;
+
+  	transform: scale(0.5,0.9) rotate(180deg) ;
+}
+
+.points {
+  position: absolute;
+  /*text-align:center;*/
+  padding-left: 16.5px;
+}
+
+a, .time {
+  color:#707070;
+}

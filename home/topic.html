@@ -1,0 +1,36 @@
+<!doctype html>
+<body ng-app="basic-reddit">
+
+<h1>
+	{{topic.title | limitTo: 20}}{{topic.title.length > 20 ? '&hellip;' : ''}}&nbsp<a ui-sref="home()"><i class="fa fa-reply"></i></a>
+ 
+</h1>
+<p>
+{{topic.text}}
+</p>
+<hr>
+<textarea ng-model="text" rows="4" cols="30"></textarea><br>
+<button ng-click="addComment()" type="button" class="btn btn-default">comment</button>
+<hr>
+	<ul ng-repeat="comment in comments | orderBy: '-votes'" class="comment-ul">
+	<div class="row post">
+		<div class="post">
+		<div class="row post-title">
+			<div class="col-lg-1">
+				<span class="vote" ng-click="upvote(comment)"></span>
+				<span class="points"><small>{{comment.votes}}</small></span>
+				<span class="vote-down" ng-click="downvote(comment)"></span>
+			</div>
+			<div class="col-lg-11">
+				<strong>{{comment.text}}</strong>
+			</div>
+		</div>
+		<!--<div class="row comment-info">-->
+				<p><small class="time">{{comment.date | date:'MMM d, y h:mm a Z'}}</small> by {{comment.author}}</p>
+		<!--</div>-->
+		<hr>
+	</div>
+	</div>
+	</ul>
+</body>
+</html>

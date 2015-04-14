@@ -1,0 +1,40 @@
+<!doctype html>
+<body ng-app="yik-yak-clone">
+
+<h1>
+	Basic-Reddit
+</h1>
+<hr>
+<div class="row">
+	<div class="col-lg-6">
+	<ul ng-repeat="post in posts | orderBy: '-votes'" class="post-ul">
+	<div class="row post">
+		<div class="post">
+		<div class="row post-title">
+			<div class="col-lg-1">
+				<span class="vote" ng-click="upvote(post)"></span>
+				<span class="points"><small>{{post.votes}}</small></span>
+				<span class="vote-down" ng-click="downvote(post)"></span>
+			</div>
+			<div class="col-lg-11">
+				<strong>{{post.title}}</strong>
+			</div>
+		</div>
+		<!--<div class="row post-info">-->
+				<p><small class="time">{{post.date | date:'MMM d, y h:mm a Z'}}</small> by {{post.author}} &nbsp&nbsp <a ui-sref="topic({id:post._id})">comments</a></p>
+		<!--</div>-->
+		<hr>
+	</div>
+	</div>
+	</ul>
+	</div>
+	<div class="col-lg-5 col-lg-offset-1">
+		<label>Title</label><br>
+		<input type="text" ng-model="title"></input><br>
+		<label>Text</label><br>
+		<textarea ng-model="text" rows="5" cols="50"></textarea><br>
+		<button ng-click="addP	ost()" type="button" class="btn btn-default">Create new post</button>
+	</div>
+	<script type="text/javascript"></script>
+</body>
+</html>
